@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    button{padding:10px;
+      color:white;
+      font-family: Georgia, 'Times New Roman', Times, serif;;
+      font-weight: bold;
+      font-size: 20px;
+      width:84%;
+      border:none;
+      border-radius: 2px;}
+      .total{background-color: rgb(247, 73, 10);}
+      .most{background-color:mediumseagreen}
+      .new{background-color:crimson;}
+      .low{background-color: rgb(241, 207, 55);}
+      .out-of-stock{background-color: red;}
+    .head{background-color:#303437;
+      color:white;
+      font-family:'Times New Roman', Times, serif;
+      margin-bottom: 30px;padding:10px;}
+      .row{margin-bottom:30px;}
+      h3{color:black;
+        background-color:bisque ;
+        padding:10px;
+        font-family:'Times New Roman', Times, serif;}
+      table {
+              border-collapse: collapse;
+          }
+      th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="head"><h1>Dashboard</h1></div>
+    <div class="row">      
+      <div class="col">
+        <button class="total">Total Products<p>12</p></button>
+      </div>
+      <div class="col">
+        <button class="most">Most Selling Products</button>
+      </div>
+      <div class="col">
+        <button class="new">New Products</button>
+      </div>
+    </div>
+    <div class="row">      
+      <div class="col">
+        <button class="low">Low Stock Products</button>
+      </div>
+      <div class="col">
+        <button class="out-of-stock">Out of Stock Products</button>
+      </div>
+      <div class="col"></div>
+    </div>
+    <h3>Recent Purchases</h3>
+    <table>
+      <tr>
+        <th>Product Id</th>
+        <th>Product Name</th>
+        <th>Category</th>
+        <th>Price(Rs.)</th>
+      </tr>
+      <tr>
+        <td>O145</td>
+        <td>Vatikca</td>
+        <td>Hair Oil</td>
+        <td>100</td>
+      </tr>
+    </table>
+  </div>
+  <script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "3707a2df-1adc-4345-94d5-0d8dfba1ee4d", // The ID of this integration.
+      region: "au-syd", // The region your integration is hosted in.
+      serviceInstanceID: "bca004b1-80da-4335-ab39-01c5064058ff", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+</body>
+</html>
